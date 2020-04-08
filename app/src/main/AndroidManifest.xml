@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="simon.clock" >
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="悬浮时钟"
+   >
+		<service
+			android:name=".clock"
+			android:label="悬浮时钟"
+			android:icon="@drawable/ic_launcher"
+			android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+			<intent-filter>
+				<action android:name="android.service.quicksettings.action.QS_TILE" />
+			</intent-filter>
+			<meta-data android:name="android.service.quicksettings.ACTIVE_TILE"
+				android:value="true" />
+		</service>
+
+		
+    </application>
+
+</manifest>
